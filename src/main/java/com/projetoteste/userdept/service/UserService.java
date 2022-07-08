@@ -4,6 +4,7 @@ import com.projetoteste.userdept.entities.User;
 import com.projetoteste.userdept.entities.UserDTO;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface UserService {
 
@@ -11,5 +12,5 @@ public interface UserService {
 
     User create(UserDTO userDTO);
 
-    UserDTO findById(Long id);
+    Optional<User> findById(Long id);
 }
