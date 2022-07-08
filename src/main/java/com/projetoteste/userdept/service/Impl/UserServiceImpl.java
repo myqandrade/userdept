@@ -40,9 +40,20 @@ public class UserServiceImpl implements UserService {
         return userDTO;
     }
 
+    public User userDtoToUser(UserDTO userDTO){
+        User user = new User();
+        user.setId(userDTO.getId());
+        user.setName(userDTO.getName());
+        user.setEmail(userDTO.getEmail());
+        user.setDepartment(userDTO.getDepartment());
+
+        return user;
+    }
+
     @Override
     public User create(UserDTO userDTO) {
-        return null;
+       User user = userDtoToUser(userDTO);
+       return userRepository.save(user);
     }
 
     @Override
