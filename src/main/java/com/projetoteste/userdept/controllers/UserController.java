@@ -32,4 +32,9 @@ public class UserController {
 	public ResponseEntity<User> create(@RequestBody UserDTO userDTO){
 		return ResponseEntity.ok(userService.create(userDTO));
 	}
+
+	@DeleteMapping
+	public String delete(@RequestBody User user){
+		return userService.delete(user);
+	}
 }

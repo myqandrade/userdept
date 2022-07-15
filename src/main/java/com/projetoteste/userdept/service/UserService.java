@@ -13,4 +13,6 @@ public interface UserService {
     User create(UserDTO userDTO);
 
     Optional<User> findById(Long id);
+
+    String delete(User user);
 }
